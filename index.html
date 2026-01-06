@@ -1,155 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>For Malak ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Little Magic for Malak 🦋</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* Reset & Body */
-* { margin:0; padding:0; box-sizing:border-box; }
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b, #3b82f6);
-  color: #fff;
-  overflow-x: hidden;
-  min-height: 100vh;
-  position: relative;
+  font-family:'Poppins',sans-serif;
+  min-height:100vh;
+  background:linear-gradient(135deg,#0a0f1f,#1b2a4a,#2f66ff);
+  color:#fff;
+  overflow-x:hidden;
 }
 
 /* Container */
 .container{
-  max-width:900px; margin:0 auto; padding:40px 20px; text-align:center; position:relative;
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 120px;
+  text-align:center;
+  position:relative;
 }
 
-/* Heart - moved to right side */
-.heart{
-  width:120px; height:120px;
-  background: radial-gradient(circle, #ff4b5c, #ef4444);
-  position: absolute;
-  top: 60px;      /* distance from top */
-  right: 40px;    /* distance from right */
-  transform: rotate(-45deg);
-  border-radius:20px;
-  animation: heartFloat 2s infinite ease-in-out;
-  box-shadow:0 0 40px rgba(255,75,92,0.6);
-}
-.heart:before, .heart:after{
-  content:""; width:120px; height:120px;
-  background: radial-gradient(circle, #ff4b5c, #ef4444);
-  border-radius:50%; position:absolute;
-}
-.heart:before{ top:-60px; left:0; }
-.heart:after{ left:60px; top:0; }
-
-@keyframes heartFloat{
-  0%,100%{ transform: translateY(0) rotate(-45deg); }
-  50%{ transform: translateY(-20px) rotate(-45deg); }
-}
-
-/* Page Title */
+/* Title */
 h1{
-  font-size:2.5em; margin-bottom:20px;
-  text-shadow:2px 2px 15px rgba(0,0,0,0.5);
-  animation:fadeIn 2s ease forwards;
+  font-size:2.7rem;
+  margin-bottom:18px;
+  letter-spacing:.5px;
   opacity:0;
+  animation:fadeIn 1.6s forwards;
+}
+
+.subtitle{
+  opacity:0;
+  animation:fadeIn 1.6s .5s forwards;
+  color:#cbd5f5;
+}
+
+/* Butterfly trail */
+.butterfly{
+  position:fixed;
+  width:32px;
+  height:32px;
+  pointer-events:none;
+  background:url('https://i.ibb.co/3fnS2V0/butterfly.png') no-repeat center/contain;
+  animation: flutter 4s linear infinite;
+  filter:drop-shadow(0 0 6px rgba(255,255,255,.6));
+}
+@keyframes flutter{
+  0%{transform:translate(-20px,-20px) rotate(-10deg)}
+  50%{transform:translate(20px,10px) rotate(10deg)}
+  100%{transform:translate(-20px,-20px) rotate(-10deg)}
 }
 
 /* Slideshow */
-.slideshow{
-  position:relative; width:100%; max-width:700px; height:420px; margin:30px auto; border-radius:20px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.5);
+.gallery{
+  position:relative;
+  width:100%;
+  max-width:720px;
+  height:430px;
+  margin:30px auto 25px;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.55);
 }
-.slideshow img{
-  width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;
-  opacity:0; transition: opacity 1s ease-in-out;
-}
-.slideshow img.active{ opacity:1; }
 
-/* Quotes */
-.quote{
-  margin:20px auto; max-width:700px; font-size:1.2em; line-height:1.6;
-  opacity:0; animation:fadeInUp 1.5s forwards; padding:10px 20px; border-left:4px solid #ef4444;
+.gallery img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1.2s ease-in-out;
 }
-.quote[dir="rtl"]{
-  direction:rtl; text-align:right; border-left:none; border-right:4px solid #ffb703;
+.gallery img.active{opacity:1}
+
+/* Cards */
+.card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);
+  padding:16px 18px;
+  margin:14px auto;
+  border-radius:18px;
+  backdrop-filter:blur(8px);
+  max-width:760px;
+  text-align:left;
+  line-height:1.7;
+  opacity:0;
+  animation:fadeUp 1.2s forwards;
+}
+.card strong{color:#ffd18b}
+.card:nth-child(1){animation-delay:.4s}
+.card:nth-child(2){animation-delay:.7s}
+.card:nth-child(3){animation-delay:1s}
+.card:nth-child(4){animation-delay:1.3s}
+
+/* Arabic cards */
+.card[dir="rtl"]{
+  text-align:right;
+  border-left:none;
+  border-right:3px solid #ff9acd;
 }
 
 /* Footer */
-.footer{ margin-top:40px; font-size:1em; opacity:0.8; }
-
-/* Animations */
-@keyframes fadeIn{ to { opacity:1; } }
-@keyframes fadeInUp{ 0%{ opacity:0; transform:translateY(20px); } 100%{ opacity:1; transform:translateY(0); } }
+.footer{
+  margin-top:40px;
+  opacity:.8;
+  font-size:.95rem;
+}
 
 /* Sparkles */
 .sparkle{
   position:absolute;
-  width:2px; height:2px;
   background:white;
   border-radius:50%;
-  opacity:0.8;
-  animation: twinkle 2s infinite;
+  opacity:.7;
+  animation:twinkle 3s infinite;
 }
 @keyframes twinkle{
-  0%,100%{ opacity:0.3; }
-  50%{ opacity:1; }
+  0%,100%{opacity:.2}
+  50%{opacity:1}
 }
+
+/* Animations */
+@keyframes fadeIn{to{opacity:1}}
+@keyframes fadeUp{0%{transform:translateY(18px);opacity:0}100%{transform:translateY(0);opacity:1}}
 </style>
 </head>
+
 <body>
 
 <div class="container">
-  <h1>For Malak 🌸</h1>
-  <div class="heart"></div>
+
+  <h1>For Malak — where kindness becomes magic 🦋</h1>
+  <p class="subtitle">A little page made just to remind you how beautifully rare you are.</p>
 
   <!-- Slideshow -->
-  <div class="slideshow">
-    <img src="https://i.ibb.co/GfLpmQmK/Whats-App-Image-2025-12-27-at-11-41-28-PM.jpg" class="active" alt="">
-    <img src="https://i.ibb.co/Mx5hHg79/Whats-App-Image-2025-12-27-at-11-41-27-PM.jpg" alt="">
-    <img src="https://i.ibb.co/TDj920Lg/Whats-App-Image-2025-12-27-at-11-40-37-PM.jpg" alt="">
-    <img src="https://i.ibb.co/3m0VnTCQ/Whats-App-Image-2025-12-27-at-11-40-01-PM.jpg" alt="">
+  <div class="gallery">
+    <img src="https://i.ibb.co/GfLpmQmK/Whats-App-Image-2025-12-27-at-11-41-28-PM.jpg" class="active">
+    <img src="https://i.ibb.co/Mx5hHg79/Whats-App-Image-2025-12-27-at-11-41-27-PM.jpg">
+    <img src="https://i.ibb.co/TDj920Lg/Whats-App-Image-2025-12-27-at-11-40-37-PM.jpg">
+    <img src="https://i.ibb.co/3m0VnTCQ/Whats-App-Image-2025-12-27-at-11-40-01-PM.jpg">
   </div>
 
-  <!-- English Quotes -->
-  <div class="quote" style="animation-delay:0.5s;">“Some friends walk into your life quietly — and somehow they become the calm, the strength, and the sunshine. You are that friend, Malak.”</div>
-  <div class="quote" style="animation-delay:1s;">“Real friendship is not measured by distance or time. It is measured by the certainty that, no matter what happens, we remain on the same side.”</div>
-  <div class="quote" style="animation-delay:1.5s;">“Your kindness carries a quiet power — the kind that heals, comforts, and makes people believe that good hearts still exist.”</div>
-  <div class="quote" style="animation-delay:2s;">“Some friendships feel like home — safe, warm, and honest. That is what knowing you feels like.”</div>
+  <!-- English -->
+  <div class="card"><strong>Sometimes life sends people quietly,</strong> and somehow they become the voice that calms the storm. You are that quiet miracle.</div>
+  <div class="card">The world feels softer around you — like it remembers how to be gentle whenever you walk into it.</div>
+  <div class="card">You don’t just show up — you lift, you steady, you make others believe they can heal and bloom again.</div>
+  <div class="card">Real friendships don’t ask for attention… they prove themselves in the moments nobody else sees.</div>
 
-  <!-- Egyptian Arabic Quotes -->
-  <div class="quote" dir="rtl" style="animation-delay:2.5s;">"في ناس وجودهم بس يطمن القلب… وانتي واحدة من الناس دي يا ملاك."</div>
-  <div class="quote" dir="rtl" style="animation-delay:3s;">"الصحاب الجدعان ما بيتقاسوش بالسنين — بيتقاسوا بالمواقف اللي ما بينسوش."</div>
-  <div class="quote" dir="rtl" style="animation-delay:3.5s;">"طلتِك دايمًا بسيطة… بس تأثيرِك كبير، وبيسيب نور في أي مكان."</div>
-  <div class="quote" dir="rtl" style="animation-delay:4s;">"يا أحلى صاحبة: شكراً على الضحكة، على السند، وعلى وجودِك لما الدنيا كانت تقيلة."</div>
-  <div class="quote" dir="rtl" style="animation-delay:4.5s;">"من مصر للقلب — في حاجات ربنا بيبعتها عشان تطمننا… وانتي واحدة من الحاجات دي."</div>
+  <!-- Arabic -->
+  <div class="card" dir="rtl">في ناس وجودهم مش عادي — وجودهم رسالة طمأنينة من غير ولا كلمة… وانتي من الناس دي يا ملاك.</div>
+  <div class="card" dir="rtl">الصُحبة الحقيقية مش وعود — هي مواقف ثابتة، وقلوب بتسند من غير ما تتكلم.</div>
+  <div class="card" dir="rtl">ابتسامتِك بسيطة… بس تأثيرها كبير، وبيسيب أثر طيب في أي مكان بتمري فيه.</div>
+  <div class="card" dir="rtl">ربنا ساعات بيبعت لنا أشخاص علشان يفتكرونا إن الدنيا لسه فيها خير… وانتي واحده من الهدايا دي.</div>
 
-  <p class="footer">Made with love, just for you ❤️</p>
+  <p class="footer">Made gently — and honestly — just for you ❤️</p>
 </div>
 
 <script>
-// Fade in title
-document.addEventListener("DOMContentLoaded", function(){
-  document.querySelector('h1').style.opacity = "1";
-});
+// Fade slideshow
+let i=0;
+const imgs=document.querySelectorAll(".gallery img");
+setInterval(()=>{
+  imgs.forEach(img=>img.classList.remove("active"));
+  i=(i+1)%imgs.length;
+  imgs[i].classList.add("active");
+},3200);
 
-// Slideshow logic
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slideshow img');
-setInterval(() => {
-  slides.forEach(img => img.classList.remove('active'));
-  slideIndex = (slideIndex + 1) % slides.length;
-  slides[slideIndex].classList.add('active');
-}, 3000); // change every 3 seconds
+// Sparkles
+for(let s=0;s<60;s++){
+  const sp=document.createElement("div");
+  sp.className="sparkle";
+  sp.style.width=sp.style.height=(Math.random()*2+1)+"px";
+  sp.style.top=Math.random()*100+"%";
+  sp.style.left=Math.random()*100+"%";
+  sp.style.animationDuration=(Math.random()*3+2)+"s";
+  document.body.appendChild(sp);
+}
 
-// Sparkles background
-for(let i=0;i<50;i++){
-  const star = document.createElement('div');
-  star.classList.add('sparkle');
-  star.style.top = Math.random()*100+'%';
-  star.style.left = Math.random()*100+'%';
-  star.style.width = star.style.height = (Math.random()*2+1)+'px';
-  star.style.animationDuration = (Math.random()*3+2)+'s';
-  document.body.appendChild(star);
+// Butterflies floating randomly
+for(let b=0;b<10;b++){
+  const bf=document.createElement("div");
+  bf.className="butterfly";
+  bf.style.top=Math.random()*100+"%";
+  bf.style.left=Math.random()*100+"%";
+  bf.style.animationDuration=(Math.random()*4+3)+"s";
+  document.body.appendChild(bf);
 }
 </script>
 
