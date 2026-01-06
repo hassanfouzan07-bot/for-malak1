@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>A Little Magic for Malak 🦋</title>
+<title>For Malak — A Little Love Story 🦋</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -12,7 +12,7 @@
 body{
   font-family:'Poppins',sans-serif;
   min-height:100vh;
-  background:linear-gradient(135deg,#0a0f1f,#1b2a4a,#2f66ff);
+  background:linear-gradient(135deg,#ffb3d9,#ff7ab6,#ff4f9b);
   color:#fff;
   overflow-x:hidden;
 }
@@ -28,8 +28,8 @@ body{
 
 /* Title */
 h1{
-  font-size:2.7rem;
-  margin-bottom:18px;
+  font-size:2.6rem;
+  margin-bottom:12px;
   letter-spacing:.5px;
   opacity:0;
   animation:fadeIn 1.6s forwards;
@@ -37,24 +37,24 @@ h1{
 
 .subtitle{
   opacity:0;
-  animation:fadeIn 1.6s .5s forwards;
-  color:#cbd5f5;
+  animation:fadeIn 1.6s .4s forwards;
+  color:#ffe7f4;
 }
 
-/* Butterfly trail */
-.butterfly{
-  position:fixed;
-  width:32px;
-  height:32px;
-  pointer-events:none;
-  background:url('https://i.ibb.co/3fnS2V0/butterfly.png') no-repeat center/contain;
-  animation: flutter 4s linear infinite;
-  filter:drop-shadow(0 0 6px rgba(255,255,255,.6));
+/* Music button */
+.music-btn{
+  margin-top:18px;
+  padding:10px 18px;
+  border-radius:40px;
+  border:1px solid rgba(255,255,255,.6);
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  cursor:pointer;
+  backdrop-filter:blur(6px);
+  transition:.25s;
 }
-@keyframes flutter{
-  0%{transform:translate(-20px,-20px) rotate(-10deg)}
-  50%{transform:translate(20px,10px) rotate(10deg)}
-  100%{transform:translate(-20px,-20px) rotate(-10deg)}
+.music-btn:hover{
+  background:rgba(255,255,255,.25);
 }
 
 /* Slideshow */
@@ -63,10 +63,10 @@ h1{
   width:100%;
   max-width:720px;
   height:430px;
-  margin:30px auto 25px;
-  border-radius:22px;
+  margin:32px auto 25px;
+  border-radius:24px;
   overflow:hidden;
-  box-shadow:0 30px 60px rgba(0,0,0,.55);
+  box-shadow:0 30px 70px rgba(0,0,0,.45);
 }
 
 .gallery img{
@@ -81,36 +81,44 @@ h1{
 
 /* Cards */
 .card{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.25);
   padding:16px 18px;
   margin:14px auto;
-  border-radius:18px;
-  backdrop-filter:blur(8px);
+  border-radius:20px;
+  backdrop-filter:blur(10px);
   max-width:760px;
   text-align:left;
-  line-height:1.7;
+  line-height:1.8;
   opacity:0;
   animation:fadeUp 1.2s forwards;
 }
-.card strong{color:#ffd18b}
-.card:nth-child(1){animation-delay:.4s}
-.card:nth-child(2){animation-delay:.7s}
-.card:nth-child(3){animation-delay:1s}
-.card:nth-child(4){animation-delay:1.3s}
+.card strong{color:#fff2c6}
+.card:nth-child(1){animation-delay:.5s}
+.card:nth-child(2){animation-delay:.8s}
+.card:nth-child(3){animation-delay:1.1s}
+.card:nth-child(4){animation-delay:1.4s}
 
 /* Arabic cards */
 .card[dir="rtl"]{
   text-align:right;
-  border-left:none;
-  border-right:3px solid #ff9acd;
+  border-right:3px solid #ffc2e6;
 }
 
-/* Footer */
-.footer{
-  margin-top:40px;
-  opacity:.8;
-  font-size:.95rem;
+/* Butterflies */
+.butterfly{
+  position:fixed;
+  width:36px;
+  height:36px;
+  pointer-events:none;
+  background:url('https://i.ibb.co/3fnS2V0/butterfly.png') no-repeat center/contain;
+  animation: flutter 4.5s linear infinite;
+  filter:drop-shadow(0 0 6px rgba(255,255,255,.7));
+}
+@keyframes flutter{
+  0%{transform:translate(-15px,-20px) rotate(-10deg)}
+  50%{transform:translate(15px,15px) rotate(12deg)}
+  100%{transform:translate(-15px,-20px) rotate(-10deg)}
 }
 
 /* Sparkles */
@@ -119,16 +127,15 @@ h1{
   background:white;
   border-radius:50%;
   opacity:.7;
-  animation:twinkle 3s infinite;
+  animation:twinkle 3.3s infinite;
 }
-@keyframes twinkle{
-  0%,100%{opacity:.2}
-  50%{opacity:1}
-}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
 
 /* Animations */
 @keyframes fadeIn{to{opacity:1}}
-@keyframes fadeUp{0%{transform:translateY(18px);opacity:0}100%{transform:translateY(0);opacity:1}}
+@keyframes fadeUp{0%{transform:translateY(20px);opacity:0}100%{transform:translateY(0);opacity:1}}
+
+.footer{margin-top:40px;opacity:.9}
 </style>
 </head>
 
@@ -136,8 +143,10 @@ h1{
 
 <div class="container">
 
-  <h1>For Malak — where kindness becomes magic 🦋</h1>
-  <p class="subtitle">A little page made just to remind you how beautifully rare you are.</p>
+  <h1>For Malak — where love feels soft and honest 🩷</h1>
+  <p class="subtitle">Some people arrive quietly… and suddenly life feels warmer, kinder, and more beautiful.</p>
+
+  <button class="music-btn" onclick="audio.play()">🎵 Play soft music</button>
 
   <!-- Slideshow -->
   <div class="gallery">
@@ -148,32 +157,38 @@ h1{
   </div>
 
   <!-- English -->
-  <div class="card"><strong>Sometimes life sends people quietly,</strong> and somehow they become the voice that calms the storm. You are that quiet miracle.</div>
-  <div class="card">The world feels softer around you — like it remembers how to be gentle whenever you walk into it.</div>
-  <div class="card">You don’t just show up — you lift, you steady, you make others believe they can heal and bloom again.</div>
-  <div class="card">Real friendships don’t ask for attention… they prove themselves in the moments nobody else sees.</div>
+  <div class="card"><strong>You have a quiet magic,</strong> the kind that doesn’t demand attention — it simply makes hearts feel safe.</div>
+  <div class="card">Your presence turns ordinary moments into something gentle, like a soft sunrise that promises everything will be okay.</div>
+  <div class="card">Some friendships are promises written without words — and yours feels like one that will always stay.</div>
+  <div class="card">You don’t just exist in people’s lives… you leave warmth behind wherever you go.</div>
 
   <!-- Arabic -->
-  <div class="card" dir="rtl">في ناس وجودهم مش عادي — وجودهم رسالة طمأنينة من غير ولا كلمة… وانتي من الناس دي يا ملاك.</div>
-  <div class="card" dir="rtl">الصُحبة الحقيقية مش وعود — هي مواقف ثابتة، وقلوب بتسند من غير ما تتكلم.</div>
-  <div class="card" dir="rtl">ابتسامتِك بسيطة… بس تأثيرها كبير، وبيسيب أثر طيب في أي مكان بتمري فيه.</div>
-  <div class="card" dir="rtl">ربنا ساعات بيبعت لنا أشخاص علشان يفتكرونا إن الدنيا لسه فيها خير… وانتي واحده من الهدايا دي.</div>
+  <div class="card" dir="rtl">في ناس وجودهم بيطمن القلب من غير ما يعملوا حاجة — وانتي واحدة من الناس دي يا ملاك.</div>
+  <div class="card" dir="rtl">اللي بيننا مش كلام… ده إحساس إن في حد دايمًا في الضهر حتى من غير ما يطلب شُكر.</div>
+  <div class="card" dir="rtl">ضحكتِك هادية — بس تأثيرها كبير، وتفضل عايشة في القلب فترة طويلة.</div>
+  <div class="card" dir="rtl">ربنا ساعات بيختار ناس تكون سبب راحة — وانتي واحدة من الهدايا دي فعلًا.</div>
 
-  <p class="footer">Made gently — and honestly — just for you ❤️</p>
+  <p class="footer">Made with a soft heart — only for you 🩷</p>
 </div>
 
+<!-- Background Music -->
+<audio id="audio" loop>
+  <!-- you can replace this link with your own mp3 if you want -->
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/23/audio_4d5f5f25b0.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-// Fade slideshow
-let i=0;
-const imgs=document.querySelectorAll(".gallery img");
+// slideshow
+let idx=0;
+const pics=document.querySelectorAll(".gallery img");
 setInterval(()=>{
-  imgs.forEach(img=>img.classList.remove("active"));
-  i=(i+1)%imgs.length;
-  imgs[i].classList.add("active");
+  pics.forEach(p=>p.classList.remove("active"));
+  idx=(idx+1)%pics.length;
+  pics[idx].classList.add("active");
 },3200);
 
-// Sparkles
-for(let s=0;s<60;s++){
+// sparkles
+for(let s=0;s<70;s++){
   const sp=document.createElement("div");
   sp.className="sparkle";
   sp.style.width=sp.style.height=(Math.random()*2+1)+"px";
@@ -183,13 +198,13 @@ for(let s=0;s<60;s++){
   document.body.appendChild(sp);
 }
 
-// Butterflies floating randomly
-for(let b=0;b<10;b++){
+// butterflies
+for(let b=0;b<12;b++){
   const bf=document.createElement("div");
   bf.className="butterfly";
   bf.style.top=Math.random()*100+"%";
   bf.style.left=Math.random()*100+"%";
-  bf.style.animationDuration=(Math.random()*4+3)+"s";
+  bf.style.animationDuration=(Math.random()*5+3)+"s";
   document.body.appendChild(bf);
 }
 </script>
